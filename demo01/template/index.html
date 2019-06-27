@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+  </head>
+  <body>
+    <div id="inputs">
+      <input type="button" value="get"/>
+      <input type="button" value="post"/>
+      <input type="button" value="put"/>
+      <input type="button" value="delete"/>
+    </div>
+
+    <script>
+      window.addEventListener('load', () => {
+        console.log('load')
+        document.querySelector('#inputs').addEventListener('click', evt => {
+          console.log(evt.target.value)
+          fetch('/', {
+            method: evt.target.value
+          })
+        })
+      })    
+    </script>
+  </body>
+</html>
